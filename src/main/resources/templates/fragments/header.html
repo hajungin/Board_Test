@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<!--footer Fragment-->
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">Main</a>
+            <a class="navbar-brand" th:href="@{/articles/insert}">Insert</a>
+            <a class="navbar-brand" th:href="@{/articles/paging}">Page List</a>
+        </div>
+    </nav>
+    <th:block th:if="${msg} != null">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong th:text="${msg}">Holy guacamole!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </th:block>
+</div>
+</html>
