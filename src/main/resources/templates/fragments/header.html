@@ -7,6 +7,11 @@
             <a class="navbar-brand" th:href="@{/}">Main</a>
             <a class="navbar-brand" th:href="@{/articles/insert}">Insert</a>
             <a class="navbar-brand" th:href="@{/articles/paging}">Page List</a>
+            <div class="text-end">
+                <a role="button" id="signup" class="btn btn-outline-primary" th:href="@{/user/signup}">회원가입</a>
+                <a role="button" id="login" class="btn btn-outline-primary" th:href="@{/user/login}">Login</a>
+                <a role="button" id="logout" class="btn btn-outline-primary" th:href="@{/user/logout}">Logout</a>
+            </div>
         </div>
     </nav>
     <th:block th:if="${msg} != null">
@@ -15,5 +20,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     </th:block>
+</div>
+
+<th:block th:if="${msg} != null">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong th:text="${msg}">Holy guacamole!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</th:block>
 </div>
 </html>
