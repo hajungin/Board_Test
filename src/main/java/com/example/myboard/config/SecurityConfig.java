@@ -30,11 +30,12 @@ public class SecurityConfig {
 //                        자동으로 시큐리티가 잡아채서 해결함으로써 getMapping 이 필요없다
 //                        .usernameParameter("email")
 //                        이메일로 로그인하는 방법은 여기 설정해주고 인터페이스에 쿼리메서드를 생성하여 서비스에서 끌어오는 방법?
-                        .defaultSuccessUrl("/"))
+                        .defaultSuccessUrl("/articles/paging",true))
                 .logout((out)->out
                         .logoutSuccessUrl("/")
-                        .logoutUrl("/logout")
-                );
+                        .logoutUrl("/logout"))
+                .csrf(csrf -> csrf.disable());
+
         return http.build();
     }
 
