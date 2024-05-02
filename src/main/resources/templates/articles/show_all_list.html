@@ -20,7 +20,7 @@
         <tr th:each="article : ${paging}" th:object="${article}">
             <td th:text="*{id}"></td>
             <td>
-                <a th:href="@{articles/show/{id}(id=*{id})}"  th:text="*{title}"></a>
+                <a th:href="@{/articles/show/{id}(id=*{id})}"  th:text="*{title}"></a>
             </td>
             <td th:text="*{content}"></td>
         </tr>
